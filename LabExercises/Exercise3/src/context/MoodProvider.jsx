@@ -19,26 +19,3 @@ const MoodProvider = ({ children }) => {
 };
 
 export default MoodProvider;
-
-
-
-
-
-/*import { useState } from 'react';
-import { MoodContext } from './MoodContext';
-
-const MoodProvider = ({ children }) => {
-  const [mood, setMood] = useState('😊');
-
-  const toggleMood = () => {
-    setMood((prev) => (prev === '😊' ? '😢' : '😊'));
-  };
-
-  return (
-    <MoodContext.Provider value={{ mood, toggleMood }}>
-      {children}
-    </MoodContext.Provider>
-  );
-};
-
-export default MoodProvider;*/
