@@ -1,4 +1,30 @@
-import { useState } from 'react';
+import { createContext, useState } from 'react';
+
+// Create context
+export const MoodContext = createContext();
+
+// Export component only from this file
+const MoodProvider = ({ children }) => {
+  const [mood, setMood] = useState('😊');
+
+  const toggleMood = () => {
+    setMood((prev) => (prev === '😊' ? '😢' : '😊'));
+  };
+
+  return (
+    <MoodContext.Provider value={{ mood, toggleMood }}>
+      {children}
+    </MoodContext.Provider>
+  );
+};
+
+export default MoodProvider;
+
+
+
+
+
+/*import { useState } from 'react';
 import { MoodContext } from './MoodContext';
 
 const MoodProvider = ({ children }) => {
@@ -15,4 +41,4 @@ const MoodProvider = ({ children }) => {
   );
 };
 
-export default MoodProvider;
+export default MoodProvider;*/
